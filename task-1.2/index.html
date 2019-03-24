@@ -1,0 +1,26 @@
+<!doctype html>  
+<head>
+<meta charset="UTF-8">
+<title>Уроки от GOIT</title>
+</head>
+<body>
+<script>
+
+'use strict';
+let credits = 23580;
+let pricePerDroid = 3000;
+let quantity = 3;
+let totalPrice = pricePerDroid * quantity;
+let result = credits - totalPrice;
+
+if (credits < totalPrice) {
+  console.log('Недостаточно средств на счету!');
+} else {
+  console.log(
+    `Вы купили ${quantity} дроидов, на счету осталось ${result} кредитов.`,
+  );
+}
+
+</script>
+</body>
+</html>

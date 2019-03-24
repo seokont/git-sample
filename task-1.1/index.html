@@ -1,0 +1,29 @@
+<!doctype html>  
+<head>
+<meta charset="UTF-8">
+<title>Уроки от GoIT</title>
+</head>
+<body>
+<h1 ></h1>
+<script>
+'use strict';
+
+const ADMIN_PASSWORD = 'm4ng0h4ckz';
+let message;
+
+message = prompt('Введите пароль');
+
+if (message === ADMIN_PASSWORD) {
+  message = 'Добро пожаловать!';
+  alert(message);
+} else if (message !== ADMIN_PASSWORD && message !== null) {
+  message = 'Доступ запрещен, неверный пароль!';
+  alert(message);
+} else if (cancelAnimationFrame) {
+  message = 'Отменено пользователем!';
+  alert(message);
+}
+</script>
+
+</body>
+</html>

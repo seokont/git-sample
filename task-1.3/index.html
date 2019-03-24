@@ -1,0 +1,40 @@
+<!doctype html>  
+<head>
+<meta charset="UTF-8">
+<title>Уроки от GOIT</title>
+</head>
+<body>
+
+<script>
+'use strict';
+const country = 'Индия';
+
+let priceChina = 100;
+let priceSouthAmerica = 250;
+let priceAustralia = 170;
+let priceIndia = 80;
+let priceJamaica = 120;
+
+switch (country) {
+  case 'Китай':
+    alert( `Доставка в ${country} будет стоить ${priceChina}` );
+    break;
+  case 'Южная Америка':
+    alert( `Доставка в ${country} будет стоить ${priceSouthAmerica}` );
+    break;
+  case 'Австралия':
+    alert( `Доставка в ${country} будет стоить ${priceAustralia}` );
+    break;
+  case 'Индия':
+    alert( `Доставка в ${country} будет стоить ${priceIndia}` );
+    break;
+  case 'Ямайка':
+    alert( `Доставка в ${country} будет стоить ${priceJamaica}` );
+    break;
+  case country:
+    alert( 'В вашей стране доставка не доступна' );
+}
+
+</script>
+</body>
+</html>
