@@ -1,0 +1,29 @@
+<!doctype html>  
+<head>
+<meta charset="UTF-8">
+<title>Уроки от GoIT</title>
+</head>
+<body>
+<h1 ></h1>
+<script>
+'use strict';
+
+let input;
+const numbers = [];
+let total = 0;
+let masiv;
+
+while (true) {
+  if ((input = prompt('Введите число'))) masiv = numbers.push(Number(input));
+
+  if (input === null) break;
+}
+
+for (let i = 0; i < numbers.length; i++) {
+  total = total + numbers[i];
+}
+alert(`Общая сумма равна ${total}`); 
+</script>
+
+</body>
+</html>

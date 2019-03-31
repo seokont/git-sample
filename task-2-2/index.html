@@ -1,0 +1,38 @@
+<!doctype html>  
+<head>
+<meta charset="UTF-8">
+<title>Уроки от GoIT</title>
+</head>
+<body>
+<h1 ></h1>
+<script>
+'use strict';
+
+const passwords = ["qwerty", "111qwe", "123123", "r4nd0mp4zzw0rd"];
+let attemptsLeft = 3;
+
+
+do {
+  attemptsLeft -= 1;
+  let prime = prompt("Vedite parol");
+  let intro = passwords.includes(prime);
+  if (prime === null) {
+    break;
+  }
+  
+
+  else if (intro) {
+    alert("Добро пожаловать!");
+    break;
+  }
+
+  else if (!intro) {
+    if (attemptsLeft > 0) {
+      alert(`Неверный пароль. У Вас осталось ${attemptsLeft} попыток`);
+    } else alert("У вас закончились попытки, аккаунт заблокирован!");
+  }
+} while (attemptsLeft > 0 );
+</script>
+
+</body>
+</html>
