@@ -14,15 +14,18 @@ let total = 0;
 let masiv;
 
 while (true) {
-  if ((input = prompt('Введите число'))) masiv = numbers.push(Number(input));
-
-  if (input === null) break;
+  if ((input = prompt('Введите число'))) {
+    masiv = numbers.push(Number(input));
+  } else {
+    break;
+  }
 }
 
 for (let i = 0; i < numbers.length; i++) {
   total = total + numbers[i];
 }
-alert(`Общая сумма равна ${total}`); 
+alert(`Общая сумма равна ${total}`);
+
 </script>
 
 </body>
