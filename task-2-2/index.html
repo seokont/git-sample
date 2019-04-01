@@ -26,11 +26,11 @@ do {
     break;
   }
 
-  else if (!intro) {
+  else 
     if (attemptsLeft > 0) {
       alert(`Неверный пароль. У Вас осталось ${attemptsLeft} попыток`);
     } else alert("У вас закончились попытки, аккаунт заблокирован!");
-  }
+  
 } while (attemptsLeft > 0 );
 </script>
 
