@@ -65,7 +65,8 @@ const notepad = {
   updateNoteContent(id, updatedContent) {
     for (let i = 0; i < this.notes.length; i++) {
       if (id === this.notes[i]['id']) {
-        Object.assign(this.notes[i], updatedContent);
+        let noteContent = Object.assign(this.notes[i], updatedContent);
+        return noteContent;
       }
     }
 
@@ -81,7 +82,7 @@ const notepad = {
   updateNotePriority(id, priority) {
     let r;
     for (let value of this.notes) {
-      if (id === value['id']) {
+      if (id === value.id) {
         value['priority'] = priority;
         return value;
       }
@@ -94,23 +95,14 @@ const notepad = {
      */
   },
   filterNotesByQuery(query) {
-    let p = [];
-    for (let i = 0; i < this.notes.length; i += 1) {
-      let s = this.notes[i].title.toLowerCase().split(' ');
-
-      let u = this.notes[i].body.toLowerCase().split(' ');
-
-      let o = s.concat(u);
-
-      for (let value of o) {
-        let newstr = value.replace('.', '');
-        if (newstr === query) {
-          let v = Object.assign({}, this.notes[i]);
-          p.push(v);
-        }
+    let masivNotes = [];
+    for (let i = 0; i < this.notes.length; i++) {
+      if (this.notes[i].body.toLowerCase().includes(query) === true) {
+        let mas = this.notes[i];
+        masivNotes.push(mas);
       }
+      return masivNotes;
     }
-    return p;
 
     /*
      * Фильтрует массив заметок по подстроке query.
@@ -123,7 +115,7 @@ const notepad = {
   filterNotesByPriority(priority) {
     let masiv = [];
     for (let i = 0; i < this.notes.length; i++) {
-      if (priority === this.notes[i]['priority']) {
+      if (priority === this.notes[i].priority) {
         masiv.push(this.notes[i]);
       }
     }
@@ -237,6 +229,7 @@ console.log(
  */
 notepad.deleteNote('id-2');
 console.log('Заметки после удаления с id -2: ', notepad.getNotes());
+
 
 
 </script>
