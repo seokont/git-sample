@@ -40,7 +40,8 @@ const notepad = {
      */
   },
   saveNote(note) {
-    return this.notes.push(note);
+    this.notes.push(note);
+
     /*
      * Сохраняет заметку в массив notes
      *
@@ -50,7 +51,7 @@ const notepad = {
   },
   deleteNote(id) {
     for (let i = 0; i < this.notes.length; i++) {
-      if (id === this.notes[i]['id']) {
+      if (id === this.notes[i].id) {
         this.notes.splice([i], 1);
       }
     }
@@ -96,13 +97,17 @@ const notepad = {
   },
   filterNotesByQuery(query) {
     let masivNotes = [];
+    let loverCase = query.toLowerCase();
     for (let i = 0; i < this.notes.length; i++) {
-      if (this.notes[i].body.toLowerCase().includes(query) === true) {
+      if (
+        this.notes[i].body.toLowerCase().includes(loverCase) === true &&
+        this.notes[i].title.toLowerCase().includes(loverCase) === true
+      ) {
         let mas = this.notes[i];
         masivNotes.push(mas);
       }
-      return masivNotes;
     }
+    return masivNotes;
 
     /*
      * Фильтрует массив заметок по подстроке query.
@@ -229,6 +234,7 @@ console.log(
  */
 notepad.deleteNote('id-2');
 console.log('Заметки после удаления с id -2: ', notepad.getNotes());
+
 
 
 
