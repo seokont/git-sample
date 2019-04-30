@@ -100,8 +100,8 @@ const notepad = {
     let loverCase = query.toLowerCase();
     for (let i = 0; i < this.notes.length; i++) {
       if (
-        this.notes[i].body.toLowerCase().includes(loverCase) === true &&
-        this.notes[i].title.toLowerCase().includes(loverCase) === true
+        this.notes[i].body.toLowerCase().includes(loverCase)  ||
+        this.notes[i].title.toLowerCase().includes(loverCase) 
       ) {
         let mas = this.notes[i];
         masivNotes.push(mas);
